@@ -32,5 +32,15 @@ module Types
       Author.create author.to_h
     end
 
+    # return type is true or false as to say did it update or not
+    field :update_author, Boolean, null:false, description: "Update an author" do
+      argument :author, Types::AuthorInputType, required: true
+    end
+
+    def update_author(author:)
+      exists = Author.where(id: author[:id]).first
+      exists&.update author.to_h
+    end
+
   end
 end

@@ -4,6 +4,7 @@ class Types::AuthorInputType < GraphQL::Schema::InputObject
 graphql_name "AuthorInputType"
 description "The attibutes for createing an author"
 
+argument :id, ID, required: false, camelize: false
 argument :first_name, String, required: false, camelize: false
 argument :yob, Int, required: false, camelize: false
 argument :is_alive, Boolean, required: false, camelize: false
