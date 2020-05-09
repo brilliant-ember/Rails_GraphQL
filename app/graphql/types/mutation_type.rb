@@ -41,6 +41,20 @@ module Types
       exists = Author.where(id: author[:id]).first
       exists&.update author.to_h
     end
+    ''' example usage
+    mutation update{
+      updateAuthor(author: {id: 1, first_name: "Mo2"})
+    }
+    '''
+
+    field :delete_author, Boolean,null: false,  description: "Delete"  do 
+      argument :id ,ID, required: true
+    end
+
+    def delete_author(id:)
+      Author.where(id: id).destroy_all
+    end
+
 
   end
 end

@@ -1,4 +1,7 @@
 # README
+https://www.udemy.com/course/basics-of-graphql-with-ruby-on-rails/learn/lecture/8572660#overview
+
+Default rails Read me
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
