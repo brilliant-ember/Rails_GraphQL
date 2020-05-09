@@ -24,5 +24,4 @@ class Types::AuthorType < Types::BaseObject
     def coordinates
         [rand(99), rand(99)]
     end
-    
 end
