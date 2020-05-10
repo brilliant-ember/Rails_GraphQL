@@ -20,5 +20,17 @@ module Types
         Author.where(id: id).first
       end
 
+      # this is the query that loggs a user in, and will return String which is the session key
+      field :login, String, null:true, description: "the login query" do
+        argument :email, String, required: true
+        argument :password, String, required: true
+      end
+
+      def login (email:, password:)
+        if user = User.where(email: email).first&.authenticate(password)
+          user.sessions.create.key
+        end
+      end
+
   end
 end
